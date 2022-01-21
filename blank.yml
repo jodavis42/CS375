@@ -1,0 +1,43 @@
+name: BuildAndTest
+
+on:
+  push:
+    branches: [ '*' ]
+  pull_request:
+    branches: [ '*' ]
+         
+jobs:
+  build:
+    strategy:
+          matrix:
+            Assignment: [1, 2, 3, 4, 5]
+            Config: [Debug, Release]
+    
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@v2
+    
+    - name: setup-msbuild
+      uses: microsoft/setup-msbuild@v1.1
+        
+    - name: Run MSBuild
+      working-directory: ./Assignment${{ matrix.Assignment }}/CompilerClassAssignment${{ matrix.Assignment }}
+      run: msbuild.exe CompilerClassAssignment${{ matrix.Assignment }}.sln -p:Configuration=${{ matrix.Config }}
+        
+    - name: Run Project
+      working-directory: ./Assignment${{ matrix.Assignment }}
+      run: CompilerClassAssignment${{ matrix.Assignment }}/${{ matrix.Config }}/CompilerClassAssignment${{ matrix.Assignment }}.exe > Out_${{ matrix.Config }}_${{ matrix.Assignment }}.txt
+      
+    - name: Archive Output
+      if: always()
+      uses: actions/upload-artifact@v2
+      with:
+        name: Out_${{ matrix.Config }}_${{ matrix.Assignment }}.txt
+        path: ./Assignment${{ matrix.Assignment }}/Out_${{ matrix.Config }}_${{ matrix.Assignment }}.txt
+        
+    - name: Run Reference
+      working-directory: ./Assignment${{ matrix.Assignment }}
+      run: Reference/CompilerClassAssignment${{ matrix.Assignment }}.exe > Ref.txt
+
+    - name: File Diff
+      run: DiffUtil/diff.exe ./Assignment${{ matrix.Assignment }}/Ref.txt ./Assignment${{ matrix.Assignment }}/Out_${{ matrix.Config }}_${{ matrix.Assignment }}.txt
