@@ -26,24 +26,18 @@ jobs:
         
     - name: Run Project
       working-directory: ./Assignment${{ matrix.Assignment }}
-      run: CompilerClassAssignment${{ matrix.Assignment }}/${{ matrix.Config }}/CompilerClassAssignment${{ matrix.Assignment }}.exe > Out.txt
+      run: CompilerClassAssignment${{ matrix.Assignment }}/${{ matrix.Config }}/CompilerClassAssignment${{ matrix.Assignment }}.exe > Out_${{ matrix.Config }}_${{ matrix.Assignment }}.txt
       
     - name: Archive Output
       if: always()
       uses: actions/upload-artifact@v2
       with:
-        path: ./Assignment${{ matrix.Assignment }}/Out.txt
+        name: Out_${{ matrix.Config }}_${{ matrix.Assignment }}.txt
+        path: ./Assignment${{ matrix.Assignment }}/Out_${{ matrix.Config }}_${{ matrix.Assignment }}.txt
         
     - name: Run Reference
       working-directory: ./Assignment${{ matrix.Assignment }}
       run: Reference/CompilerClassAssignment${{ matrix.Assignment }}.exe > Ref.txt
 
     - name: File Diff
-      # You may pin to the exact commit or the version.
-      # uses: tianhaoz95-actions/file-diff@02328b477669ac73288aa4a069c8ace6a6cf967c
-      uses: tianhaoz95-actions/file-diff@v1.0.0
-      with:
-        # The LHS file to compare
-        lhs: ./Assignment${{ matrix.Assignment }}/Ref.txt
-        # The RHS file to compare
-        rhs: ./Assignment${{ matrix.Assignment }}/Out.txt
+      run: DiffUtil/diff.exe ./Assignment${{ matrix.Assignment }}/Ref.txt ./Assignment${{ matrix.Assignment }}/Out_${{ matrix.Config }}_${{ matrix.Assignment }}.txt
