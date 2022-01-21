@@ -8,6 +8,7 @@
 #define COMPILER_CLASS_VARIANT
 
 #include <vector>
+#include <string>
 
 class Type;
 class Function;

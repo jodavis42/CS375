@@ -6,6 +6,7 @@
 #include "Driver1.hpp"
 #include "DriverShared.hpp"
 #include <stdio.h>
+#include <fstream>
 
 #if DRIVER1
 int main(int argc, char* argv[])

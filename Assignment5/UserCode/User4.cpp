@@ -34,7 +34,7 @@ Type* Library::GetFunctionType(std::vector<Type*> parameterTypes, Type* returnTy
   return nullptr;
 }
 
-void SemanticAnalyize(AbstractNode* node, std::vector<Library*>& dependencies, Library* library)
+void SemanticAnalyize(AbstractNode* node, Library* library)
 {
 }
 
