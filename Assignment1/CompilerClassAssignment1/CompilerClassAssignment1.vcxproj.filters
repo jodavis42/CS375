@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="..\Drivers\Driver1.cpp">
+      <Filter>Driver</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Drivers\DriverShared.cpp">
+      <Filter>Driver</Filter>
+    </ClCompile>
+    <ClCompile Include="..\UserCode\User1.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\Drivers\TokenKeywords.inl">
+      <Filter>Driver</Filter>
+    </None>
+    <None Include="..\Drivers\Tokens.inl">
+      <Filter>Driver</Filter>
+    </None>
+    <None Include="..\Drivers\TokenSymbols.inl">
+      <Filter>Driver</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Driver">
+      <UniqueIdentifier>{7817dc05-73cc-4f77-84ba-07274fbc2113}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Drivers\Driver1.hpp">
+      <Filter>Driver</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Drivers\DriverShared.hpp">
+      <Filter>Driver</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

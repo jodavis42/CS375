@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="..\Drivers\Driver2.cpp">
+      <Filter>Driver</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Drivers\Driver1.cpp">
+      <Filter>Driver</Filter>
+    </ClCompile>
+    <ClCompile Include="..\UserCode\User1.cpp" />
+    <ClCompile Include="..\Drivers\DriverShared.cpp">
+      <Filter>Driver</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Drivers\Driver3.cpp">
+      <Filter>Driver</Filter>
+    </ClCompile>
+    <ClCompile Include="..\UserCode\User3.cpp" />
+    <ClCompile Include="..\Drivers\AstNodes.cpp">
+      <Filter>Driver</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Driver">
+      <UniqueIdentifier>{4e6d50cb-958e-4964-90f0-8a2e12cb2e85}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Drivers\Driver2.hpp">
+      <Filter>Driver</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Drivers\Driver1.hpp">
+      <Filter>Driver</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Drivers\DriverShared.hpp">
+      <Filter>Driver</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Drivers\Driver3.hpp">
+      <Filter>Driver</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Drivers\AstNodes.hpp">
+      <Filter>Driver</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\Drivers\Grammar.txt">
+      <Filter>Driver</Filter>
+    </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\Drivers\TokenKeywords.inl">
+      <Filter>Driver</Filter>
+    </None>
+    <None Include="..\Drivers\Tokens.inl">
+      <Filter>Driver</Filter>
+    </None>
+    <None Include="..\Drivers\TokenSymbols.inl">
+      <Filter>Driver</Filter>
+    </None>
+  </ItemGroup>
+</Project>
