@@ -10,7 +10,7 @@ jobs:
   build:
     strategy:
           matrix:
-            Assignment: [1]
+            Assignment: [1, 2, 3, 4, 5]
             Config: [Debug, Release]
     
     runs-on: windows-latest
