@@ -88,6 +88,18 @@
     <ClInclude Include="..\Drivers\DriverShared.hpp" />
     <ClInclude Include="..\Drivers\SymbolTable.hpp" />
     <ClInclude Include="..\Drivers\Variant.hpp" />
+    <ClInclude Include="..\UserCode\ExpresionResolverVisitor.hpp" />
+    <ClInclude Include="..\UserCode\Interpreter.hpp" />
+    <ClInclude Include="..\UserCode\InterpreterPrePass.hpp" />
+    <ClInclude Include="..\UserCode\LibraryHelpers.hpp" />
+    <ClInclude Include="..\UserCode\MemberResolverVisitor.hpp" />
+    <ClInclude Include="..\UserCode\Parser.hpp" />
+    <ClInclude Include="..\UserCode\SymbolPrinterVisitor.hpp" />
+    <ClInclude Include="..\UserCode\SymbolStack.hpp" />
+    <ClInclude Include="..\UserCode\TypeResolverVisitor.hpp" />
+    <ClInclude Include="..\UserCode\TypeVisitor.hpp" />
+    <ClInclude Include="..\UserCode\VariableStack.hpp" />
+    <ClInclude Include="..\UserCode\Visitor.hpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="..\Drivers\Grammar.txt" />
